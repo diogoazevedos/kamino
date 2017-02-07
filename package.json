@@ -3,6 +3,14 @@
   "name": "kamino",
   "version": "0.1.0",
   "description": "A web application structure",
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diogoazevedos/kamino.git"
