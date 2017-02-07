@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "kamino",
+  "version": "0.1.0",
+  "description": "A web application structure",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogoazevedos/kamino.git"
+  },
+  "keywords": [
+    "kamino"
+  ],
+  "author": "Diogo Azevedo <diogoazevedos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogoazevedos/kamino/issues"
+  },
+  "homepage": "https://github.com/diogoazevedos/kamino#readme"
+}
