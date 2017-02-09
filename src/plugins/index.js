@@ -5,12 +5,12 @@ const user = {
   routes: { prefix: '/users' },
 };
 
-const card = {
-  register: require('./card'),
-  routes: { prefix: '/cards' },
+const product = {
+  register: require('./product'),
+  routes: { prefix: '/products' },
 };
 
 module.exports = [
   user,
-  card,
+  product,
 ];
