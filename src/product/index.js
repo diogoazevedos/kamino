@@ -4,4 +4,5 @@ exports.register = (server, options, next) => {
 
 exports.register.attributes = {
   name: 'product',
+  dependencies: ['db'],
 };
