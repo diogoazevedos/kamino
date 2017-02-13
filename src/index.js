@@ -1,18 +1,31 @@
 /* eslint-disable no-console */
 
-const plugins = require('./plugins');
-const { Server } = require('hapi');
+require('dotenv').config();
 
-const server = new Server();
+const Hapi = require('hapi');
+const knex = require('knex');
+const kernel = require('./kernel');
 
-server.connection({ port: process.env.PORT || 1337 });
+const server = new Hapi.Server();
 
-server.register(plugins, (error) => {
+server.app.knex = knex({
+  client: process.env.DB_CLIENT,
+  connection: {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+  },
+});
+
+server.connection({ port: process.env.PORT || 3000 });
+
+server.register(kernel, (error) => {
   if (error) {
     throw error;
   }
 
-  console.log('Plugins successfully loaded.');
+  console.log('Kernel registered.');
 });
 
 module.exports = server;
