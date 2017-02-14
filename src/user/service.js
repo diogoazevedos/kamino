@@ -1,4 +1,4 @@
-const { string } = require('joi');
+const { string, number } = require('joi');
 const { create } = require('./repository');
 
 exports.create = knex => ({
@@ -6,6 +6,12 @@ exports.create = knex => ({
   tags: ['api'],
   validate: {
     payload: {
+      name: string().min(2).max(255).required(),
+    },
+  },
+  response: {
+    schema: {
+      id: number().integer().required(),
       name: string().min(2).max(255).required(),
     },
   },
