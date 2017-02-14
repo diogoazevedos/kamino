@@ -9,4 +9,13 @@ module.exports = [
     register: require('./user'),
     routes: { prefix: '/users' },
   },
+  {
+    register: require('vision'),
+  },
+  {
+    register: require('inert'),
+  },
+  {
+    register: require('lout'),
+  },
 ];
