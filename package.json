@@ -5,6 +5,7 @@
   "description": "A web application structure",
   "main": "index.js",
   "dependencies": {
+    "boom": "^4.2.0",
     "dotenv": "^4.0.0",
     "hapi": "^16.1.0",
     "inert": "^4.1.0",

@@ -1,4 +1,4 @@
-const { gt, is, not, length } = require('ramda');
+const { isTooLong, isNotString, isNotNumber } = require('./validator');
 
 class User {
   constructor(props) {
@@ -7,7 +7,7 @@ class User {
   }
 
   set id(value) {
-    if (not(is(Number, value))) {
+    if (isNotNumber(value)) {
       throw new TypeError('The id must be a number');
     }
 
@@ -19,11 +19,11 @@ class User {
   }
 
   set name(value) {
-    if (not(is(String, value))) {
+    if (isNotString(value)) {
       throw new TypeError('The name must be a string');
     }
 
-    if (gt(length(value), 255)) {
+    if (isTooLong(value)) {
       throw new RangeError('The name may not be greater than 255 caracterers');
     }
 

@@ -8,7 +8,7 @@ const kernel = require('./kernel');
 
 const server = new Hapi.Server();
 
-server.app.knex = knex({
+server.app.db = knex({
   client: process.env.DB_CLIENT,
   connection: {
     host: process.env.DB_HOST,

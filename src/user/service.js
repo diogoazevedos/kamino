@@ -1,26 +1,21 @@
-const { string, number } = require('joi');
-const { create } = require('./repository');
+const Boom = require('boom');
+const User = require('./user');
+const Repository = require('./repository');
 
-exports.create = knex => ({
-  description: 'Store a product in the database and return it',
-  tags: ['api'],
-  validate: {
-    payload: {
-      name: string().min(2).max(255).required(),
-    },
-  },
-  response: {
-    schema: {
-      id: number().integer().required(),
-      name: string().min(2).max(255).required(),
-    },
-  },
-  handler(request, reply) {
-    create(knex, request.payload)
-      .then((user) => {
-        const response = reply(user.attributes);
+class Service {
+  constructor() {
+    this.users = new Repository();
+  }
 
-        return response.code(201);
-      });
-  },
-});
+  create(db, data) {
+    try {
+      const user = new User(data);
+
+      return this.users.create(db, user);
+    } catch (error) {
+      return Boom.badData(error.message);
+    }
+  }
+}
+
+module.exports = Service;
