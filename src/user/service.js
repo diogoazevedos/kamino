@@ -1,4 +1,3 @@
-const Boom = require('boom');
 const User = require('./user');
 const Repository = require('./repository');
 
@@ -8,13 +7,9 @@ class Service {
   }
 
   create(db, data) {
-    try {
-      const user = new User(data);
+    const user = new User(data);
 
-      return this.users.create(db, user);
-    } catch (error) {
-      return Boom.badData(error.message);
-    }
+    return this.users.create(db, user);
   }
 }
 

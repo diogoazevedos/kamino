@@ -1,15 +1,9 @@
-const { objOf, head, compose } = require('ramda');
-const { assign } = require('./helpers');
+const User = require('./user');
+const BaseRepository = require('../../lib/repository');
 
-class Repository {
+class Repository extends BaseRepository {
   constructor() {
-    this.table = 'users';
-  }
-
-  create(db, user) {
-    return db(this.table)
-      .insert(user.props)
-      .then(compose(assign(user), objOf('id'), head));
+    super('users', User);
   }
 }
 
