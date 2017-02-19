@@ -1,23 +1,7 @@
-const { isTooLong, isNotString, isNotNumber } = require('../../lib/validator');
+const { isTooLong, isNotString } = require('../../lib/validator');
+const Entity = require('../../lib/entity');
 
-class User {
-  constructor(props) {
-    this.props = { };
-    Object.assign(this, props);
-  }
-
-  set id(value) {
-    if (isNotNumber(value)) {
-      throw new TypeError('The id must be a number');
-    }
-
-    this.props.id = value;
-  }
-
-  get id() {
-    return this.props.id;
-  }
-
+class User extends Entity {
   set name(value) {
     if (isNotString(value)) {
       throw new TypeError('The name must be a string');
