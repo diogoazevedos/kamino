@@ -14,7 +14,7 @@ exports.register = (server, options, next) => {
       method: 'POST',
       handler: controller.create.bind(controller),
       config: {
-        description: 'Store a product in the database and return it',
+        description: 'Store an user in the database and return it',
         validate: {
           payload: {
             name: Joi.string().min(2).max(255).required(),
