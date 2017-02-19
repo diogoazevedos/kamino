@@ -1,4 +1,4 @@
-const { isTooLong, isNotString, isNotNumber } = require('./validator');
+const { isTooLong, isNotString, isNotNumber } = require('../../lib/validator');
 
 class User {
   constructor(props) {
