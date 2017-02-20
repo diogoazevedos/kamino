@@ -1,6 +1,9 @@
 # Kamino
 
-[![Build Status](https://travis-ci.com/diogoazevedos/kamino.svg?token=7NwnHssbApgXgjpgQ14A)](https://travis-ci.com/diogoazevedos/kamino)
+[![Build Status](https://travis-ci.org/diogoazevedos/kamino.svg?branch=master)](https://travis-ci.org/diogoazevedos/kamino)
+[![Coverage Status](https://coveralls.io/repos/github/diogoazevedos/kamino/badge.svg)](https://coveralls.io/github/diogoazevedos/kamino)
+[![Dependencies Status](https://david-dm.org/diogoazevedos/kamino/status.svg)](https://david-dm.org/diogoazevedos/kamino)
+[![devDependencies Status](https://david-dm.org/diogoazevedos/kamino/dev-status.svg)](https://david-dm.org/diogoazevedos/kamino?type=dev)
 
 A web application structure.
 
