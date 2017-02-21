@@ -27,7 +27,7 @@
   "scripts": {
     "start": "node index.js",
     "cover": "nyc report --reporter=text-lcov | coveralls",
-    "test": "nyc ava **/*.spec.js",
+    "test": "nyc ava",
     "lint": "eslint . --ext js"
   },
   "repository": {
