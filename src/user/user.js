@@ -17,10 +17,6 @@ class User extends Entity {
   get name() {
     return this.attributes.name;
   }
-
-  static of(attributes) {
-    return new User(attributes);
-  }
 }
 
 module.exports = User;
