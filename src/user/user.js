@@ -11,15 +11,15 @@ class User extends Entity {
       throw new RangeError('The name may not be greater than 255 caracterers');
     }
 
-    this.props.name = value;
+    this.attributes.name = value;
   }
 
   get name() {
-    return this.props.name;
+    return this.attributes.name;
   }
 
-  static of(props) {
-    return new User(props);
+  static of(attributes) {
+    return new User(attributes);
   }
 }
 

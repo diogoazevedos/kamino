@@ -15,7 +15,7 @@ test('should instantiate an user successfully', (t) => {
   const user = new User(data);
 
   t.is(user.name, data.name);
-  t.deepEqual(user.props, data);
+  t.deepEqual(user.attributes, data);
 });
 
 test('should throw an error when name is not a string', (t) => {
