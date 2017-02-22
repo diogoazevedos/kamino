@@ -1,7 +1,7 @@
 const { isTooLong, isNotString } = require('../../lib/validator');
-const Entity = require('../../lib/entity');
+const Model = require('../../lib/model');
 
-class User extends Entity {
+class User extends Model {
   set name(value) {
     if (isNotString(value)) {
       throw new TypeError('The name must be a string');
