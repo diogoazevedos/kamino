@@ -1,10 +1,10 @@
 const User = require('./user');
-const BaseRepository = require('../../lib/repository');
+const { Repository } = require('alderaan');
 
-class Repository extends BaseRepository {
+class UserRepository extends Repository {
   constructor() {
     super('users', User);
   }
 }
 
-module.exports = Repository;
+module.exports = UserRepository;

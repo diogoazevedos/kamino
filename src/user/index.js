@@ -1,10 +1,10 @@
 const Joi = require('joi');
-const Service = require('./service');
-const Controller = require('./controller');
+const UserService = require('./service');
+const UserController = require('./controller');
 
 exports.register = (server, options, next) => {
-  const service = new Service();
-  const controller = new Controller(server.app.db, service);
+  const service = new UserService();
+  const controller = new UserController(server.app.db, service);
 
   server.expose('service', service);
 

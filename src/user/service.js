@@ -1,9 +1,9 @@
 const User = require('./user');
-const Repository = require('./repository');
+const UserRepository = require('./repository');
 
-class Service {
+class UserService {
   constructor() {
-    this.users = new Repository();
+    this.users = new UserRepository();
   }
 
   create(db, data) {
@@ -13,4 +13,4 @@ class Service {
   }
 }
 
-module.exports = Service;
+module.exports = UserService;

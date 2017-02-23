@@ -1,7 +1,7 @@
 const { prop } = require('ramda');
 const Boom = require('boom');
 
-class Controller {
+class UserController {
   constructor(db, users) {
     this.db = db;
     this.users = users;
@@ -20,4 +20,4 @@ class Controller {
   }
 }
 
-module.exports = Controller;
+module.exports = UserController;

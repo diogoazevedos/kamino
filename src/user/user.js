@@ -1,5 +1,5 @@
-const { isTooLong, isNotString } = require('../../lib/validator');
-const Model = require('../../lib/model');
+const { isTooLong, isNotString } = require('../helper');
+const { Model } = require('alderaan');
 
 class User extends Model {
   set name(value) {
