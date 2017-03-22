@@ -1,7 +1,12 @@
 language: node_js
-node_js:
-  - 7
+branches:
+  only: master
 
-script: npm run lint && npm test
-after_success:
-  - npm run cover
+script:
+  - yarn lint
+  - yarn test
+
+node_js: 7
+install: yarn
+
+after_success: yarn cover
