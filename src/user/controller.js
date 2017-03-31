@@ -1,4 +1,3 @@
-const { prop } = require('ramda');
 const Boom = require('boom');
 
 class UserController {
@@ -7,13 +6,11 @@ class UserController {
     this.users = users;
   }
 
-  create(request, reply) {
+  async create(request, reply) {
     try {
-      const result = this.users
-        .create(this.db, request.payload)
-        .then(prop('props'));
+      const user = await this.users.create(this.db, request.payload);
 
-      return reply(result).code(201);
+      return reply(user.attributes).code(201);
     } catch (error) {
       return Boom.badData(error.message);
     }
